@@ -15,9 +15,9 @@
   <tbody>
     <% @smoothiechoices.each do |smoothiechoice| %>
       <tr>
+	<td><%= image_tag(smoothiechoice.photo, height: '200', width: '250') %></td>
         <td><%= smoothiechoice.name %></td>
         <td><%= smoothiechoice.description %></td>
-        <td><%= smoothiechoice.photo %></td>
         <td><%= link_to 'Show', smoothiechoice %></td>
         <td><%= link_to 'Edit', edit_smoothiechoice_path(smoothiechoice) %></td>
         <td><%= link_to 'Destroy', smoothiechoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Smoothiechoices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @smoothiechoices.each do |smoothiechoice| %>
+      <tr>
+        <td><%= smoothiechoice.name %></td>
+        <td><%= smoothiechoice.description %></td>
+        <td><%= smoothiechoice.photo %></td>
+        <td><%= link_to 'Show', smoothiechoice %></td>
+        <td><%= link_to 'Edit', edit_smoothiechoice_path(smoothiechoice) %></td>
+        <td><%= link_to 'Destroy', smoothiechoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Smoothiechoice', new_smoothiechoice_path %>

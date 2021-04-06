@@ -1,0 +1,32 @@
+<%= form_with(model: smoothiechoice, local: true) do |form| %>
+  <% if smoothiechoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(smoothiechoice.errors.count, "error") %> prohibited this smoothiechoice from being saved:</h2>
+
+      <ul>
+        <% smoothiechoice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

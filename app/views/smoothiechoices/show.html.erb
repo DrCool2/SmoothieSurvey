@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @smoothiechoice.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @smoothiechoice.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @smoothiechoice.photo %>
+</p>
+
+<%= link_to 'Edit', edit_smoothiechoice_path(@smoothiechoice) %> |
+<%= link_to 'Back', smoothiechoices_path %>

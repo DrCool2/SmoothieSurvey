@@ -1,0 +1,2 @@
+class Smoothiechoice < ApplicationRecord
+end

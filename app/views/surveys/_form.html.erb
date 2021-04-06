@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :smoothiechoice_id %>
-    <%= form.text_field :smoothiechoice_id %>
+    <%= form.select :smoothiechoice_id, options_from_collection_for_select(@smoothiechoices, "id", "name") %>
   </div>
 
   <div class="actions">

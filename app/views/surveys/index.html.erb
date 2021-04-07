@@ -2,6 +2,11 @@
 
 <h1>Surveys</h1>
 
+<div>
+<%= link_to 'New Survey', new_survey_path %>
+<hr>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -28,4 +33,11 @@
 
 <br>
 
-<%= link_to 'New Survey', new_survey_path %>
+<div>
+    <%= @survey_results  %>
+</div>
+
+
+<div>
+  <%= pie_chart @survey_results %>
+</div>

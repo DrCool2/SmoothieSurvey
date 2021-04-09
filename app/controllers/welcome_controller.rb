@@ -12,7 +12,11 @@ class WelcomeController < ApplicationController
 	session[:username] = @username
 	session[:first_name] = @first_name
 	session[:last_name] = @last_name
-	redirect_to new_survey_path
+	if Survey.find_by("user_id like ?", session[:username])
+	  redirect_to surveys_path
+	else
+	  redirect_to new_survey_path
+        end
      else
 	redirect_to({ action: 'index' }, alert: "Bad Username, Password, or Not Authorized!")
      end 

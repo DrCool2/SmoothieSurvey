@@ -2,9 +2,9 @@ class WelcomeController < ApplicationController
   include ApplicationHelper
 
   def index
-    @username = "testweinmans"
+    @username = "testweinmans2"
     @password = "Summer123"
     
-    authentication(@username,@password)
+    @authentication_results = authentication(@username,@password)
   end
 end

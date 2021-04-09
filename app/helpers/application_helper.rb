@@ -35,18 +35,28 @@ def authentication(username,password)
   conn = Net::LDAP.new(server)
   if conn.bind
    puts "CONNECTED!"
+   authenticated = true
   else
    puts "Authentication FAILED!"
-   exit
+   authenticated = false 
+   return false
   end
 
   results = conn.search(:filter => Net::LDAP::Filter.eq("sAMAccountName", a_loginid))
 
     if results.count == 1 && results[0].attribute_names.include?(:memberof) && results[0].memberof.include?(a_group_full)
 	  puts "GROUP FOUND"
+	  authorized = true
     else
 	  puts "group NOT found - Authorization FAILED!"
+	  authorized = false
+	  return false
+    end
+
+    if authenticated == true && authorized == true
+	return true
+    else
+	return false
     end
   end
-
 end

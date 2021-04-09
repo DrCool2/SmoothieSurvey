@@ -33,7 +33,7 @@
     </thead>
 
     <tbody>
-      <% @surveys.each do |survey| %>
+      <% @surveys.order('updated_at DESC').each do |survey| %>
         <tr>
           <td><%= survey.first_name %></td>
           <td><%= survey.last_name %></td>

@@ -30,8 +30,10 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to @survey, notice: "Survey was successfully created." }
-        format.json { render :show, status: :created, location: @survey }
+#        format.html { redirect_to @survey, notice: "Survey was successfully created." }
+#        format.json { render :show, status: :created, location: @survey }
+        format.html { redirect_to surveys_path, notice: "Survey was successfully created." }
+        format.json { render :index, status: :created }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
@@ -69,6 +71,6 @@ class SurveysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def survey_params
-      params.require(:survey).permit(:first_name, :last_name, :smoothiechoice_id)
+      params.require(:survey).permit(:first_name, :last_name, :smoothiechoice_id, :user_id)
     end
 end

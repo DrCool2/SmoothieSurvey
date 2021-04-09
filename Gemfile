@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem "chartkick"
+gem "bootstrap", '~> 5.0.0.beta2'
+gem 'net-ldap', '~> 0.17.0'

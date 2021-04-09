@@ -15,6 +15,7 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
     @smoothiechoices = Smoothiechoice.all
+      
   end
 
   # GET /surveys/1/edit

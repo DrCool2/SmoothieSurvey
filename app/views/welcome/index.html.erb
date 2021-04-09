@@ -1,10 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+
 <h1>Welcome to Smoothie Survey.</h1>
 <p>
-<h2>Please sign in</h2>
-<p>
 
-username: <%= @username %> 
-<br>
-password: <%= @password %>
-<br>
-authentication_results: <%= @authentication_results %>
+<div class="container">
+  <div class="card">
+	<h2 class="card-title">Please sign in</h2>
+	<hr>
+    <div class="card-body">
+	
+	<% if alert.present? %>
+		<p id="alert" class="alert alert-danger"><%= alert %></p>
+	<% end %>
+
+      <form method="post" action="welcome">
+        <label for="username">Username</label>
+        <input type="username" name="username" id="username">
+      
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+
+      <p>
+        <input type="submit" name="Sign in">
+      </form>
+    </div>
+  </div>
+</div>

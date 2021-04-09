@@ -54,6 +54,9 @@ def authentication(username,password)
     end
 
     if authenticated == true && authorized == true
+	@first_name = results[0].cn
+	@last_name = results[0].sn
+	@username = a_loginid
 	return true
     else
 	return false

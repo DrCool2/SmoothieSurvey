@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_202053) do
+ActiveRecord::Schema.define(version: 2021_04_09_140122) do
 
   create_table "smoothiechoices", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_04_06_202053) do
     t.bigint "smoothiechoice_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_id"
     t.index ["smoothiechoice_id"], name: "index_surveys_on_smoothiechoice_id"
   end
 

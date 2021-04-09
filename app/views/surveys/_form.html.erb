@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <% form.label :first_name %>
+    <%= form.hidden_field :first_name, value: @first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <% form.label :last_name %>
+    <%= form.hidden_field :last_name, value: @last_name %>
   </div>
 
   <div class="field">
-    <%= form.label :smoothiechoice_id %>
-    <%= form.select :smoothiechoice_id, options_from_collection_for_select(@smoothiechoices, "id", "name") %>
+    <% form.label :username %>
+    <%= form.hidden_field :username, value: @username %>
+  </div>
+
+  <div class="field">
+    <%# form.label :smoothiechoice_id %>
+    <%# form.select :smoothiechoice_id, options_from_collection_for_select(@smoothiechoices, "id", "name") %>
   </div>
 
   <div class="form-check form-check-inline">

@@ -15,7 +15,9 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
     @smoothiechoices = Smoothiechoice.all
-      
+    @username = session[:username]
+    @first_name = session[:first_name]
+    @last_name = session[:last_name]
   end
 
   # GET /surveys/1/edit

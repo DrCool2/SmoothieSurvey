@@ -1,5 +1,6 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: %i[ show edit update destroy ]
+  before_action :authenticated
 
   # GET /surveys or /surveys.json
   def index
@@ -77,5 +78,14 @@ class SurveysController < ApplicationController
     # Only allow a list of trusted parameters through.
     def survey_params
       params.require(:survey).permit(:first_name, :last_name, :smoothiechoice_id, :user_id)
+    end
+
+    def authenticated
+      if session[:username].present? 
+	return true
+      else
+	redirect_to(welcome_index_path, alert: "Session expired, please sign in.")
+	return false
+      end
     end
 end

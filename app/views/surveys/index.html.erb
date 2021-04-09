@@ -3,7 +3,8 @@
 <h1>Surveys</h1>
 
 <div>
-  <%= link_to 'New Survey', new_survey_path %>
+  <%# link_to 'New Survey', new_survey_path %>
+  <%= link_to 'Log Off', controller: 'welcome', action: 'index' %>
   <hr>
 </div>
 
@@ -21,7 +22,7 @@
 
 
 <hr>
-<% if session[:username] == "testweinmans" %> 
+<% if session[:username] != "weinmans" %> 
 	
 
   <div class="tbl">

@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   include ApplicationHelper
-
+  before_action :reset_session 
 
   def index
   end

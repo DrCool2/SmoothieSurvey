@@ -1,5 +1,6 @@
 class SmoothiechoicesController < ApplicationController
   before_action :set_smoothiechoice, only: %i[ show edit update destroy ]
+  before_action :authenticated
 
   # GET /smoothiechoices or /smoothiechoices.json
   def index
@@ -66,4 +67,13 @@ class SmoothiechoicesController < ApplicationController
     def smoothiechoice_params
       params.require(:smoothiechoice).permit(:name, :description, :photo)
     end
+  
+  def authenticated
+    if session[:username].present?
+      return true
+    else
+      redirect_to(welcome_index_path, alert: "Session expired, please sign in.")
+      return false
+    end
+  end
 end

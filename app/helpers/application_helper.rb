@@ -6,6 +6,8 @@ def authentication(username)
   a_loginid = username
   a_loginid_full = a_loginid + a_domain
 
+  a_password = ""
+
   a_group = "TEST-grp-smoothie"
   a_group_full = "CN=" + a_group + ",OU=Staff Accounts,OU=User Accounts,DC=fsdbk12,DC=org"
   member = Array.new
@@ -25,7 +27,7 @@ def authentication(username)
    :auth => {
     :method => :simple,
     :username => a_loginid_full,
-    :password => 'Summer123'
+    :password => a_password 
    }
   }
 

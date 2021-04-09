@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   include ApplicationHelper
 
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
 
   def index
   end

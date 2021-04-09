@@ -22,6 +22,10 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+
+    @username = session[:username]
+    @first_name = session[:first_name]
+    @last_name = session[:last_name]
   end
 
   # POST /surveys or /surveys.json

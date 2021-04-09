@@ -1,13 +1,15 @@
 module ApplicationHelper
 
-def authentication(username)
+
+#helper_method :authentication
+
+def authentication(username,password)
 
   a_domain = "@fsdbk12.org"
   a_loginid = username
   a_loginid_full = a_loginid + a_domain
 
-  a_password = ""
-
+  a_password = password
   a_group = "TEST-grp-smoothie"
   a_group_full = "CN=" + a_group + ",OU=Staff Accounts,OU=User Accounts,DC=fsdbk12,DC=org"
   member = Array.new
@@ -22,12 +24,11 @@ def authentication(username)
    :host => 'fsdbdc05.fsdbk12.org',
    :base => 'ou=Staff Accounts,ou=User Accounts,dc=fsdbk12,dc=org',
    :port => 636,
-
    :encryption => :simple_tls,
    :auth => {
     :method => :simple,
     :username => a_loginid_full,
-    :password => a_password 
+    :password => a_password
    }
   }
 

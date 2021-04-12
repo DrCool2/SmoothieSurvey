@@ -34,14 +34,7 @@
   <div class="form-check form-check-inline">
     <%= form.label :smoothiechoice_id, "Choose a Smoothie:" %>
  <br>
-    <%# form.collection_radio_buttons(:smoothiechoice_id, Smoothiechoice.all, :id, :name) do |b| b.label { b.radio_button + image_tag(b.object.photo, height: "350", width: "400", class:"form-check-label") } end %>
-    <%# form.collection_radio_buttons(:smoothiechoice_id, Smoothiechoice.all, :id, :name) do |b| b.label { b.radio_button + image_tag(b.object.photo, height: "350", width: "400", class:"form-check-label") + " " + b.object.name + " - " + b.object.description } 
-     end %>
-
     <%= form.collection_radio_buttons(:smoothiechoice_id, Smoothiechoice.all, :id, :name) do |b| b.label { b.radio_button + image_tag(b.object.photo, height: "350", width: "400") + " " + b.object.name + " - " + b.object.description } end %>
-    
-    <%# form.collection_radio_buttons(:smoothiechoice_id, Smoothiechoice.all, :id, :name) do |b| b.label { b.radio_button(class:"form-check-input radio") + image_tag(b.object.photo, height: "300", width: "350", class:"figure-img img-fluid rounded ") } end %>
-    <%# form.collection_radio_buttons(:smoothiechoice_id, Smoothiechoice.all, :id, :name) do |b| b.label { b.radio_button + image_tag(b.object.photo, height: "300", width: "350", class:"figure-img img-fluid rounded") } end %>
   </div>
     
 <br>

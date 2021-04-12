@@ -1,6 +1,8 @@
 class Survey < ApplicationRecord
   belongs_to :smoothiechoice
 
+  validates :user_id, uniqueness: true
+
 def self.survey_results
 
   total_survey_results = Hash.new()

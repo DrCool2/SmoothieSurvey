@@ -1,7 +1,7 @@
 class Survey < ApplicationRecord
   belongs_to :smoothiechoice
 
-  validates :user_id, uniqueness: true, message: "You may only submit ONE survey!"
+  validates :user_id, uniqueness: true
 
 def self.survey_results
 

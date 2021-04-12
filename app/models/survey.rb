@@ -2,6 +2,10 @@ class Survey < ApplicationRecord
   belongs_to :smoothiechoice
 
   validates :user_id, uniqueness: true
+  validates :user_id, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :smoothiechoice_id, presence: true
 
 def self.survey_results
 
